@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import FirstHeader from "./Firstheader";
+// import StopWatch from "./stopwatch";
+import Timer from "./Timer";
+import RevCountdown from "./revTimer";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      title: "this is countdown with react.js",
+    };
+  }
+  setNewTitle = () => {
+    this.setState({
+      title: "props for function",
+    });
+  };
+  render() {
+    return (
+      <div className="main">
+        <FirstHeader title={this.state.title} />
+        <Timer />
+        <swProject/>
+      </div>
+    );
+  }
 }
 
 export default App;
